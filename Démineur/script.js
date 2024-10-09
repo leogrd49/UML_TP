@@ -30,7 +30,7 @@ function createBoard() {
             const cell = document.createElement('div');
             cell.dataset.row = i;
             cell.dataset.col = j;
-            cell.classList.add('cell');
+            cell.classList.add('w-12', 'h-12', 'bg-gray-300', 'flex', 'items-center', 'justify-center', 'cursor-pointer', 'border', 'border-gray-400', 'hover:bg-gray-400', 'transition-colors', 'duration-300', 'cell');
             cell.addEventListener('click', handleClick);
             boardContainer.appendChild(cell);
         }
@@ -78,18 +78,18 @@ function revealCell(row, col) {
     const value = board[row][col];
 
     if (value === 'M') {
-        cell.classList.add('mine');
+        cell.classList.add('bg-red-500', 'text-white');
         cell.textContent = '💣';
         gameOver = true;
         alert('Game Over! Une mine a explosé!');
         return;
     }
 
-    cell.classList.add('revealed');
+    cell.classList.add('bg-gray-200', 'cursor-default');
     if (value > 0) {
         cell.textContent = value;
+        cell.classList.add('text-black');
     } else {
-        // Révéler les cases adjacentes si la case est vide
         for (let x = -1; x <= 1; x++) {
             for (let y = -1; y <= 1; y++) {
                 if (row + x >= 0 && row + x < rows && col + y >= 0 && col + y < cols) {
