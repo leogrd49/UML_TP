@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>150</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Case
+--
+-etat: String
+-contenu: String
+-voisines: List[Case]
+--
+/+decouvrir()/
+/+marquer()/
+/+annulerMarquage()/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>400</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Plateau
+--
+-cases: List[List[Case]]
+-taille: Int
+-drapeauxRestants: Int
+--
+/+initialiser()/
+/+lancerPartie()/
+/+afficherResultat()/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>640</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Jeu
+--
+-plateau: Plateau
+-etatJeu: String
+--
+/+demarrerJeu()/
+/+finirPartie()/
+/+verifierCase()/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>270</y>
+      <w>80</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>contient
+m2=1
+m1=0..*
+</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>520</y>
+      <w>60</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>utilise
+m2=1
+m1=1
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
